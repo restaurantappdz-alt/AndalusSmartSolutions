@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../data/projects';
+import { useLanguage } from '../context/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +29,7 @@ const Projects = () => {
               className="flex items-center gap-3 mb-3 text-cyan-600 font-mono text-sm"
             >
               <span className="w-8 h-[1px] bg-cyan-600"></span>
-              PORTFOLIO_DATA
+              {t('projects_label')}
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -35,7 +38,7 @@ const Projects = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight"
             >
-              System Deployments
+              {t('projects_title')}
             </motion.h2>
           </div>
           
@@ -44,9 +47,9 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-slate-600 max-w-md md:text-right"
+            className="text-slate-600 max-w-md md:text-right rtl:md:text-left"
           >
-            A curated log of our most advanced software and hardware integrations.
+            {t('projects_desc')}
           </motion.p>
         </div>
 

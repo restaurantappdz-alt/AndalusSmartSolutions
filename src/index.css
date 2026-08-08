@@ -11,6 +11,13 @@
   }
 }
 
+html[lang="ar"] body {
+  font-family: 'Cairo', sans-serif;
+}
+html[lang="ar"] .font-mono {
+  font-family: 'Cairo', monospace;
+}
+
 .bg-grid-pattern {
   background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
   background-size: 32px 32px;
@@ -35,7 +42,7 @@
 }
 
 .glass-panel {
-  @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(37,99,235,0.05)];
+  @apply bg-white/70 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(37,99,235,0.05)];
 }
 
 .glow-text {

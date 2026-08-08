@@ -31,8 +31,8 @@ const CircuitBackground = () => {
       }
     }
 
-    // Create random traces between dots
-    const numTraces = Math.floor((cols * rows) / 8);
+    // Create random traces between dots (Limit for performance)
+    const numTraces = Math.min(40, Math.floor((cols * rows) / 15));
     for (let i = 0; i < numTraces; i++) {
       const startDot = dots[Math.floor(Math.random() * dots.length)];
       const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical';
@@ -62,14 +62,6 @@ const CircuitBackground = () => {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw faint dot grid
-      ctx.fillStyle = 'rgba(203, 213, 225, 0.4)'; // slate-300 with opacity
-      dots.forEach(dot => {
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 1, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
       // Draw traces and pulses
       traces.forEach(trace => {
         // Draw base line (trace path)
@@ -89,22 +81,16 @@ const CircuitBackground = () => {
         const pulseX = trace.start.x + (trace.end.x - trace.start.x) * trace.pulseProgress;
         const pulseY = trace.start.y + (trace.end.y - trace.start.y) * trace.pulseProgress;
 
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = trace.color;
         ctx.fillStyle = trace.color;
         ctx.beginPath();
-        ctx.arc(pulseX, pulseY, 2, 0, Math.PI * 2);
+        ctx.arc(pulseX, pulseY, 2.5, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0; // Reset
       });
 
       // Draw glowing nodes (chips)
       chips.forEach(chip => {
-        chip.phase += 0.03;
+        chip.phase += 0.05;
         const glow = Math.abs(Math.sin(chip.phase));
-        
-        ctx.shadowBlur = 12 * glow;
-        ctx.shadowColor = chip.color;
         
         // Draw a techy square node
         ctx.strokeStyle = chip.color;
@@ -115,12 +101,9 @@ const CircuitBackground = () => {
         
         // Inner core
         ctx.fillStyle = chip.color;
-        ctx.globalAlpha = glow * 0.5;
+        ctx.globalAlpha = 0.2 + (glow * 0.6); // Fast opacity instead of blur
         ctx.fill();
         ctx.globalAlpha = 1.0;
-        
-        // Reset shadow
-        ctx.shadowBlur = 0;
       });
 
       animationFrameId = requestAnimationFrame(draw);
