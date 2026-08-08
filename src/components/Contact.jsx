@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] md:text-xs text-slate-500 font-mono mb-1">VOICE_PROTOCOL</span>
-                    <span className="text-sm md:text-base text-slate-700 font-medium" dir="ltr">+966 50 123 4567</span>
+                    <span className="text-sm md:text-base text-slate-700 font-medium" dir="ltr">0123456</span>
                   </div>
                 </div>
                 <div className="flex items-center group">
@@ -78,24 +78,9 @@ const Contact = () => {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] md:text-xs text-slate-500 font-mono mb-1">PHYSICAL_LOCATION</span>
-                    <span className="text-sm md:text-base text-slate-700 font-medium">King Fahd Road, Riyadh</span>
+                    <span className="text-sm md:text-base text-slate-700 font-medium">Someplace</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-bold text-slate-800 mb-4 font-mono">{t('contact_links')}</h4>
-              <div className="flex space-x-4 rtl:space-x-reverse">
-                <a href="#" className="p-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-600 hover:text-white hover:bg-slate-800 transition-all">
-                  <FaLinkedin size={20} />
-                </a>
-                <a href="#" className="p-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-600 hover:text-white hover:bg-slate-800 transition-all">
-                  <FaTwitter size={20} />
-                </a>
-                <a href="#" className="p-3 bg-slate-100 border border-slate-200 rounded-lg text-slate-600 hover:text-white hover:bg-slate-800 transition-all">
-                  <FaGithub size={20} />
-                </a>
               </div>
             </div>
           </motion.div>
