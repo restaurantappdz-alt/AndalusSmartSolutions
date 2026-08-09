@@ -10,7 +10,7 @@ const Hero = () => {
   const ChevronIcon = language === 'ar' ? FiChevronLeft : FiChevronRight;
 
   return (
-    <section id="hero" className="min-h-screen relative flex items-center justify-center pt-20 px-4 bg-grid-pattern overflow-hidden">
+    <section id="hero" className="min-h-screen relative flex items-center justify-center px-4 py-8 md:py-12 bg-grid-pattern overflow-hidden">
       {/* Decorative background tech elements */}
       <div className="absolute top-1/3 left-6 md:left-24 text-blue-200 animate-pulse">
         <FiCpu className="w-12 h-12 md:w-20 md:h-20 opacity-40" />
@@ -28,16 +28,7 @@ const Hero = () => {
       {/* Decorative glowing orb (Radial gradient is much faster than CSS blur) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[radial-gradient(circle,_rgba(37,99,235,0.08)_0%,_transparent_70%)] -z-10 pointer-events-none"></div>
 
-      <div className="max-w-5xl mx-auto text-center relative z-10 mt-10">
-        <motion.img
-          src={logo}
-          alt="Al Andalus Smart Solutions logo"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="w-20 h-20 md:w-24 md:h-24 rounded-2xl mx-auto mb-8 object-cover shadow-xl ring-1 ring-slate-200"
-        />
-
+      <div className="max-w-5xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,6 +82,15 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-accent-blue to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </motion.div>
+
+        <motion.img
+          src={logo}
+          alt="Al Andalus Smart Solutions logo"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="w-14 h-14 md:w-16 md:h-16 rounded-xl mx-auto mt-8 md:mt-10 object-cover shadow-lg ring-1 ring-slate-200"
+        />
       </div>
     </section>
   );
