@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { FiMenu, FiX, FiActivity } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +31,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-12">
           <div className="flex-shrink-0 cursor-pointer flex items-center gap-2">
             <FiActivity className="text-accent-blue" size={24} />
-            <Link to="hero" smooth={true} duration={500} offset={-64} className="flex flex-col">
+            <Link to="hero" smooth={true} duration={500} offset={-64} className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Al Andalus Smart Solutions logo"
+              className="h-9 w-9 rounded-lg object-cover shadow-md ring-1 ring-slate-200"
+            />
+            <span className="flex flex-col">
               <span className="text-xl font-extrabold text-slate-900 tracking-tight leading-none">{t('hero_title1')}</span>
               <span className="text-xs font-mono text-cyan-600 tracking-widest uppercase mt-1">{t('hero_title2')}</span>
-            </Link>
+            </span>
+          </Link>
           </div>
           
           <div className="hidden md:flex items-center">

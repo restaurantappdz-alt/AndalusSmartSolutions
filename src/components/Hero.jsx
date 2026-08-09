@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiCpu, FiWifi, FiChevronRight, FiChevronLeft, FiServer, FiShield } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
+import logo from '../assets/logo.png';
 
 const Hero = () => {
   const { t, language } = useLanguage();
@@ -28,6 +29,15 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[radial-gradient(circle,_rgba(37,99,235,0.08)_0%,_transparent_70%)] -z-10 pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10 mt-10">
+        <motion.img
+          src={logo}
+          alt="Al Andalus Smart Solutions logo"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-20 h-20 md:w-24 md:h-24 rounded-2xl mx-auto mb-8 object-cover shadow-xl ring-1 ring-slate-200"
+        />
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
