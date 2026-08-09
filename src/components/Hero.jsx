@@ -83,14 +83,19 @@ const Hero = () => {
           </Link>
         </motion.div>
 
-        <motion.img
-          src={logo}
-          alt="Al Andalus Smart Solutions logo"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-14 h-14 md:w-16 md:h-16 rounded-xl mx-auto mt-8 md:mt-10 object-cover shadow-lg ring-1 ring-slate-200"
-        />
+          className="relative mt-10 md:mt-12"
+        >
+          <div className="absolute -inset-10 -z-10 bg-[radial-gradient(circle,rgba(37,99,235,0.28)_0%,rgba(6,182,212,0.15)_45%,transparent_70%)] blur-2xl"></div>
+          <img
+            src={logo}
+            alt="Al Andalus Smart Solutions logo"
+            className="w-24 h-24 md:w-32 md:h-32 rounded-2xl mx-auto object-cover shadow-2xl shadow-blue-500/25 ring-1 ring-slate-900/10"
+          />
+        </motion.div>
       </div>
     </section>
   );
