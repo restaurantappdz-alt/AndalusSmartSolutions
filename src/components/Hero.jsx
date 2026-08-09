@@ -93,7 +93,7 @@ const Hero = () => {
           <img
             src={logo}
             alt="Al Andalus Smart Solutions logo"
-            className="w-24 h-24 md:w-32 md:h-32 rounded-2xl mx-auto object-cover shadow-2xl shadow-blue-500/25 ring-1 ring-slate-900/10"
+            className="w-24 h-24 md:w-32 md:h-32 mx-auto object-cover shadow-2xl shadow-blue-500/25"
           />
         </motion.div>
       </div>
