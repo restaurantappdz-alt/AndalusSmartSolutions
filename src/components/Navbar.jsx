@@ -30,7 +30,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-12">
           <div className="flex-shrink-0 cursor-pointer flex items-center gap-2">
-            <FiActivity className="text-accent-blue" size={24} />
             <Link to="hero" smooth={true} duration={500} offset={-64} className="flex items-center gap-3">
             <img
               src={logo}
