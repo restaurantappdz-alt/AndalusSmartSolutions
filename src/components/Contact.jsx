@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div className="flex flex-col overflow-hidden">
                     <span className="text-[10px] md:text-xs text-slate-500 font-mono mb-1 truncate">DATA_PACKET</span>
-                    <span className="text-sm md:text-base text-slate-700 font-medium truncate">info@alandalus-solutions.com</span>
+                    <span className="text-sm md:text-base text-slate-700 font-medium truncate">andalussmart.dz@gmail.com</span>
                   </div>
                 </div>
                 <div className="flex items-center group">
@@ -69,16 +69,7 @@ const Contact = () => {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] md:text-xs text-slate-500 font-mono mb-1">VOICE_PROTOCOL</span>
-                    <span className="text-sm md:text-base text-slate-700 font-medium" dir="ltr">0123456</span>
-                  </div>
-                </div>
-                <div className="flex items-center group">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 me-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors shrink-0">
-                    <FaMapMarkerAlt size={18} className="md:w-5 md:h-5" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] md:text-xs text-slate-500 font-mono mb-1">PHYSICAL_LOCATION</span>
-                    <span className="text-sm md:text-base text-slate-700 font-medium">Someplace</span>
+                    <span className="text-sm md:text-base text-slate-700 font-medium" dir="ltr">0553886108 / 0794726589</span>
                   </div>
                 </div>
               </div>
